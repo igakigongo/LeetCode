@@ -8,23 +8,20 @@ class TreeNode
   end
 end
 
+def insert(hash, node, level)
+  return if node.nil?
+  hash[level] += [node.val]
+
+  insert(hash, node.left, level + 1)
+  insert(hash, node.right, level + 1)
+  hash
+end
+
 # @param {TreeNode} root
 # @return {Integer[][]}
 def level_order(root)
   return [] if root.nil?
-  result, stack = [], Array.new([root])
-
-  until stack.empty?
-    result << []
-    temp = []
-    stack.each do |node|
-      result[-1] << node.val && temp += [node.left, node.right] unless node.nil?
-    end
-
-    stack = temp
-  end
-  result.pop()
-  result
+  insert(Hash.new([]), root, 0).sort.map { |_, v| v }
 end
 
 root = TreeNode.new(3)
