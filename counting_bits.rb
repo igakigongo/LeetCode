@@ -17,12 +17,18 @@ def counter(num)
   return result
 end
 
-def count_bits(num)
+def count_bits_with_map(num)
   (0..num).map(&method(:counter))
+end
+
+def count_bits(num)
+  a = [0] * (num + 1)
+  (1..num).each { |i| a[i] = a[i >> 2] + (i & 1) }
+  a
 end
 
 p count_bits_basic(10)
 # p count_bits(3)
-p count_bits(7)
+p count_bits_with_map(7)
 p count_bits(28)
 p count_bits(31)
