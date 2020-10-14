@@ -1,28 +1,51 @@
-import { LinkedList } from './linked_list';
+import { ListNode } from './linked_list';
 
 /**
  * Reverses a singly linked list - iteratively in O(n) time complexity
  * @param {ListNode} head 
  */
 const reverseList = head => {
-  if(head === null) return null;
-  if(typeof head === 'undefined') return undefined;
+  if (head === null) return null;
+  if (typeof head === 'undefined') return undefined;
 
-  const array  = [];
-  let current_pointer = head;
-  while(current_pointer){
-    array.push(current_pointer.val);
-    current_pointer = current_pointer.next;
-  }
-  
-  const result = new LinkedList();
-  while(array.length > 0){
-    result.add(array.pop());
+  let current = head;
+
+  if (!current.next) return current;
+
+  let pointer;
+
+  while (current) {
+    if (head === current) {
+      pointer = new ListNode(current.val);
+    } else {
+      pointer = new ListNode(current.val, pointer);
+    }
+    current = current.next;
   }
 
-  return result.getHead();
+  return pointer;
 };
 
+export const reverseV2 = head => {
+  if (head === null) return null;
+  if (typeof head === 'undefined') return undefined;
 
+  let current = head;
+
+  if (!current.next) return current;
+
+  let pointer;
+
+  while (current) {
+    if (head === current) {
+      pointer = new ListNode(current.val);
+    } else {
+      pointer = new ListNode(current.val, pointer);
+    }
+    current = current.next;
+  }
+
+  return pointer;
+};
 
 export default reverseList;
