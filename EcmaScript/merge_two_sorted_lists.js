@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 import { LinkedList } from './linked_list';
 
 /**
@@ -13,24 +12,26 @@ const mergeTwoLists = (l1, l2) => {
 
   const result = new LinkedList();
 
-  while (l1 && l2) {
-    if (l1.val > l2.val) {
-      result.add(l2.val);
-      l2 = l2.next;
+  let list1 = l1; let
+    list2 = l2;
+  while (list1 && list2) {
+    if (list1.val > list2.val) {
+      result.add(list2.val);
+      list2 = list2.next;
     } else {
-      result.add(l1.val);
-      l1 = l1.next;
+      result.add(list1.val);
+      list1 = list1.next;
     }
   }
 
-  while (l1) {
-    result.add(l1.val);
-    l1 = l1.next;
+  while (list1) {
+    result.add(list1.val);
+    list1 = list1.next;
   }
 
-  while (l2) {
-    result.add(l2.val);
-    l2 = l2.next;
+  while (list2) {
+    result.add(list2.val);
+    list2 = list2.next;
   }
 
   return result.getHead();
