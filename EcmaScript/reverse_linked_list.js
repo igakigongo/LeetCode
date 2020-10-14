@@ -9,9 +9,6 @@ const reverseList = head => {
   if (typeof head === 'undefined') return undefined;
 
   let current = head;
-
-  if (!current.next) return current;
-
   let pointer;
 
   while (current) {

@@ -11,20 +11,21 @@ describe('reverse a linked list', () => {
   });
 
   describe('with values', () => {
-    let list;
-
-    beforeAll(() => {
-      list = new LinkedList();
-      ([1, 2, 3, 4, 5, 6]).forEach(x => list.add(x));
-    });
+    const createLinkedList = array => {
+      const linkedList = new LinkedList();
+      array.forEach(x => linkedList.add(x));
+      return linkedList;
+    }
 
     test('iteratively', () => {
+      const list = createLinkedList([1]);
       const head = reverseList(list.getHead());
       expect(head).not.toBeUndefined();
-      expect(head.val).toEqual(6);
+      expect(head.val).toEqual(1);
     });
 
     test('recursively', () => {
+      const list = createLinkedList([1, 2, 3, 6]);
       const head = reverseV2(list.getHead());
       expect(head).not.toBeUndefined();
       expect(head.val).toEqual(6);
