@@ -15,8 +15,8 @@ describe('priority queue', () => {
   });
 
   it('orders nodes', () => {
-    const nodes = [5, 3, 2, 10].map(x => new ListNode(x));
-    nodes.forEach(node => queue.add(node));
+    const nodes = [5, 3, 2, 10].map((x) => new ListNode(x));
+    nodes.forEach((node) => queue.add(node));
     expect(queue.first().val).toEqual(2);
     expect(queue.size()).toEqual(4);
   });

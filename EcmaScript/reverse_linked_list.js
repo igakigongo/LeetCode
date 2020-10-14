@@ -1,12 +1,12 @@
+/* eslint-disable no-param-reassign */
 import { ListNode } from './linked_list';
 
 /**
  * Reverses a singly linked list - iteratively in O(n) time complexity
- * @param {ListNode} head 
+ * @param {ListNode} head
  */
-const reverseList = head => {
-  if (head === null || typeof head === 'undefined')
-    return head;
+const reverseList = (head) => {
+  if (head === null || typeof head === 'undefined') return head;
 
   let current = head;
   let pointer;
@@ -24,8 +24,7 @@ const reverseList = head => {
 };
 
 export const reverse = (head, prev = null) => {
-  if (head === null || typeof head === 'undefined')
-    return prev;
+  if (head === null || typeof head === 'undefined') return prev;
 
   prev = new ListNode(head.val, prev);
   return reverse(head.next, prev);

@@ -1,0 +1,4 @@
+jest.config.js
+setupTests.js
+**/*.test.js
+**/build/*

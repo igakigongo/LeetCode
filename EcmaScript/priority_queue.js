@@ -10,18 +10,18 @@ export default function PriorityQueue() {
         return;
       }
 
-      if (array[0].val > node.val){
+      if (array[0].val > node.val) {
         array.unshift(node);
         return;
       }
 
-      if (array[array.length - 1].val < node.val){
+      if (array[array.length - 1].val < node.val) {
         array.push(node);
         return;
       }
 
       let index;
-      
+
       // find an index for insertion
       for (let i = 0; i < array.length;) {
         if (array[i].val > node.val) {
@@ -30,17 +30,17 @@ export default function PriorityQueue() {
         }
         i += 1;
       }
-      
+
       if (index) {
         array.splice(index, 0, node);
-      }else{
+      } else {
         array.push(node);
       }
     },
     dequeue: () => array.shift(),
-    first: () => array.length === 0 ? undefined : array[0],
+    first: () => (array.length === 0 ? undefined : array[0]),
     getAll: () => [...array],
     isEmpty: () => array.length === 0,
-    size: () => array.length
-  }
+    size: () => array.length,
+  };
 }

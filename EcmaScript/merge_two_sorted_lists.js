@@ -1,11 +1,12 @@
-import { LinkedList, ListNode } from './linked_list';
+/* eslint-disable no-param-reassign */
+import { LinkedList } from './linked_list';
 
 /**
  * @param {ListNode} l1
  * @param {ListNode} l2
  * @return {ListNode}
  */
-var mergeTwoLists = function (l1, l2) {
+const mergeTwoLists = (l1, l2) => {
   if (!l1 && !l2) return null;
   if (!l1 && l2) return l2;
   if (l1 && !l2) return l1;
@@ -34,3 +35,5 @@ var mergeTwoLists = function (l1, l2) {
 
   return result.getHead();
 };
+
+export default mergeTwoLists;

@@ -5,7 +5,8 @@ export function ListNode(val, next) {
 }
 
 export function LinkedList() {
-  let head, tail;
+  let head; let
+    tail;
 
   return {
     add: (value) => {
@@ -17,6 +18,6 @@ export function LinkedList() {
       }
       tail = node;
     },
-    getHead: () => head
+    getHead: () => head,
   };
 }

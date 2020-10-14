@@ -11,11 +11,11 @@ describe('reverse a linked list', () => {
   });
 
   describe('with values', () => {
-    const createLinkedList = array => {
+    const createLinkedList = (array) => {
       const linkedList = new LinkedList();
-      array.forEach(x => linkedList.add(x));
+      array.forEach((x) => linkedList.add(x));
       return linkedList;
-    }
+    };
 
     test('iteratively', () => {
       const list = createLinkedList([1]);
