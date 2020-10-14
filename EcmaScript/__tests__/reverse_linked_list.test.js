@@ -1,5 +1,5 @@
 import { LinkedList } from '../linked_list';
-import reverseList, { reverseV2 } from '../reverse_linked_list';
+import reverseList, { reverse } from '../reverse_linked_list';
 
 describe('reverse a linked list', () => {
   test('when head is null', () => {
@@ -26,7 +26,7 @@ describe('reverse a linked list', () => {
 
     test('recursively', () => {
       const list = createLinkedList([1, 2, 3, 6]);
-      const head = reverseV2(list.getHead());
+      const head = reverse(list.getHead());
       expect(head).not.toBeUndefined();
       expect(head.val).toEqual(6);
     });

@@ -5,8 +5,8 @@ import { ListNode } from './linked_list';
  * @param {ListNode} head 
  */
 const reverseList = head => {
-  if (head === null) return null;
-  if (typeof head === 'undefined') return undefined;
+  if (head === null || typeof head === 'undefined')
+    return head;
 
   let current = head;
   let pointer;
@@ -23,26 +23,12 @@ const reverseList = head => {
   return pointer;
 };
 
-export const reverseV2 = head => {
-  if (head === null) return null;
-  if (typeof head === 'undefined') return undefined;
+export const reverse = (head, prev = null) => {
+  if (head === null || typeof head === 'undefined')
+    return prev;
 
-  let current = head;
-
-  if (!current.next) return current;
-
-  let pointer;
-
-  while (current) {
-    if (head === current) {
-      pointer = new ListNode(current.val);
-    } else {
-      pointer = new ListNode(current.val, pointer);
-    }
-    current = current.next;
-  }
-
-  return pointer;
+  prev = new ListNode(head.val, prev);
+  return reverse(head.next, prev);
 };
 
 export default reverseList;
