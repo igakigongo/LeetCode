@@ -1,4 +1,4 @@
-function PriorityQueue() {
+export default function PriorityQueue() {
   const array = [];
 
   return {
@@ -44,7 +44,3 @@ function PriorityQueue() {
     size: () => array.length
   }
 }
-
-module.exports = {
-  PriorityQueue
-};

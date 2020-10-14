@@ -1,7 +1,5 @@
-import {
-  LinkedList,
-  mergeLists,
-} from '../merge_k_sorted_lists';
+import { LinkedList } from '../linked_list';
+import { mergeLists } from '../merge_k_sorted_lists';
 
 describe('merge k sorted lists', () => {
   let arrays;

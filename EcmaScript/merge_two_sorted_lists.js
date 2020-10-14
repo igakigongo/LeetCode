@@ -1,24 +1,4 @@
-function ListNode(val, next) {
-  this.val = val === undefined ? 0 : val;
-  this.next = next === undefined ? null : next;
-}
-
-function LinkedList() {
-  let head, tail;
-
-  return {
-    add: (value) => {
-      const node = new ListNode(value);
-      if (head) {
-        tail.next = node;
-      } else {
-        head = node;
-      }
-      tail = node;
-    },
-    getHead: () => head
-  };
-}
+import { LinkedList, ListNode } from './linked_list';
 
 /**
  * @param {ListNode} l1

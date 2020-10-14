@@ -1,5 +1,5 @@
-import { ListNode } from '../merge_k_sorted_lists';
-import { PriorityQueue } from '../priority_queue';
+import { ListNode } from '../linked_list';
+import PriorityQueue from '../priority_queue';
 
 describe('priority queue', () => {
   let queue;

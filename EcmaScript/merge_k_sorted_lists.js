@@ -1,29 +1,7 @@
-import { PriorityQueue } from './priority_queue';
+import { LinkedList } from './linked_list';
+import PriorityQueue from './priority_queue';
 
-// Definition for singly-linked list.
-function ListNode(val, next) {
-  this.val = val === undefined ? 0 : val;
-  this.next = next === undefined ? null : next;
-}
-
-function LinkedList() {
-  let head, tail;
-
-  return {
-    add: (value) => {
-      const node = new ListNode(value);
-      if (head) {
-        tail.next = node;
-      } else {
-        head = node;
-      }
-      tail = node;
-    },
-    getHead: () => head
-  };
-}
-
-function mergeLists(lists) {
+export function mergeLists(lists) {
   if (lists.length === 0 || lists.every(l => !l)) {
     return null;
   }
@@ -47,9 +25,3 @@ function mergeLists(lists) {
 
   return result.getHead();
 }
-
-module.exports = {
-  LinkedList,
-  ListNode,
-  mergeLists
-};
